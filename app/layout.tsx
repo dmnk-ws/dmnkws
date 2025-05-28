@@ -15,12 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className="antialiased mx-25">
+      <body className="antialiased mx-0 sm:mx-10 md:mx-25">
         <header>
-          <div className="flex justify-between bg-gray-800">
-            <h1 className="text-white p-2">dmnkws.dev</h1>
-            <Nav />
-          </div>
+          <Nav />
         </header>
         {children}
         <footer>Footer</footer>

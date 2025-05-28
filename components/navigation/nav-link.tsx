@@ -16,11 +16,8 @@ export default function NavLink({ href, label }: NavLinkProps) {
       : 'text-gray-300 hover:bg-gray-700 hover:text-white';
 
   return (
-    <li className="p-2">
-      <Link
-        className={`${textStyle} rounded-md px-3 py-2 text-sm font-medium`}
-        href={href}
-      >
+    <li className="p-3">
+      <Link className={`${textStyle} rounded-md px-3 py-2`} href={href}>
         {label}
       </Link>
     </li>
