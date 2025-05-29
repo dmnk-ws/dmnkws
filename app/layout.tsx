@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import React, { ReactNode } from 'react';
 import './globals.css';
-import Nav from '@/components/navigation/nav';
 
 export const metadata: Metadata = {
   title: 'dmnkws.dev',
@@ -15,12 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className="antialiased mx-0 sm:mx-10 md:mx-25">
-        <header>
-          <Nav />
-        </header>
+      <body className="antialiased mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl min-h-screen">
         {children}
-        <footer>Footer</footer>
       </body>
     </html>
   );

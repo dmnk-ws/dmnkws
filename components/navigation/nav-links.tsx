@@ -8,10 +8,10 @@ interface NavLinksProps {
 export default function NavLinks({ className }: NavLinksProps) {
   return (
     <ul className={className}>
-      <NavLink href="/" label="Home" />
-      <NavLink href="/about" label="About" />
-      <NavLink href="/portfolio" label="Portfolio" />
-      <NavLink href="/contact" label="Contact" />
+      <NavLink href="#home" label="Home" />
+      <NavLink href="#about" label="About" />
+      <NavLink href="#portfolio" label="Portfolio" />
+      <NavLink href="#contact" label="Contact" />
     </ul>
   );
 }

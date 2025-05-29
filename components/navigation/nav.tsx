@@ -5,18 +5,17 @@ import { useState } from 'react';
 import menu from '@/assets/icons/menu.svg';
 import close from '@/assets/icons/close.svg';
 import NavLinks from '@/components/navigation/nav-links';
-import Link from 'next/link';
 
 export default function Nav() {
   const [show, setShow] = useState(false);
   const dropDownStyle = show ? 'opacity-100 max-h-[200px]' : 'opacity-0 max-h-0';
 
   return (
-    <nav className="bg-gray-800">
-      <div className="flex justify-between mx-6 sm:mx-2 md:mx-0 py-4">
-        <Link className="text-white p-2 sm:p-3" href="/">
+    <nav className="fixed top-0 left-0 right-0 z-50 mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl py-3 md:py-6 xl:text-xl shadow-md bg-background">
+      <div className="flex justify-between">
+        <a className="text-white py-3 justify-center" href="#home">
           dmnkws.dev
-        </Link>
+        </a>
         <NavLinks className="hidden sm:flex gap-2 xl:gap-10 justify-end" />
         <button
           type="button"

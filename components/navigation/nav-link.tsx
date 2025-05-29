@@ -1,25 +1,49 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import React, { useCallback } from 'react';
+import { useActiveSectionContext } from '@/context/ActiveSectionProvider';
 
 interface NavLinkProps {
-  href: string;
+  href: '#home' | '#about' | '#portfolio' | '#contact';
   label: string;
 }
 
 export default function NavLink({ href, label }: NavLinkProps) {
-  const pathname = usePathname();
+  const activeId = useActiveSectionContext();
   const textStyle =
-    pathname === href
+    activeId === href
       ? 'text-white'
-      : 'text-gray-300 hover:bg-gray-700 hover:text-white';
+      : 'text-gray-400 hover:bg-gray-700 hover:text-white';
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+
+      const id = href.replace('#', '');
+      const section = document.getElementById(id);
+      const navbar = document.querySelector('nav');
+
+      if (section && navbar) {
+        const y =
+          section.getBoundingClientRect().top +
+          window.pageYOffset -
+          navbar.getBoundingClientRect().height;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    },
+    [href]
+  );
 
   return (
     <li className="p-3">
-      <Link className={`${textStyle} rounded-md px-3 py-2`} href={href}>
+      <a
+        href={href}
+        onClick={handleClick}
+        className={`${textStyle} rounded-md px-3 py-2`}
+      >
         {label}
-      </Link>
+      </a>
     </li>
   );
 }
