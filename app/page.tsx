@@ -1,5 +1,6 @@
 import Nav from '@/components/navigation/nav';
 import { ActiveSectionProvider } from '@/context/ActiveSectionProvider';
+import Footer from '@/components/footer/Footer';
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
           <p>This is the Contact section.</p>
         </section>
       </main>
-      <footer>Footer</footer>
+      <Footer />
     </ActiveSectionProvider>
   );
 }
