@@ -1,10 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
-import menu from '@/assets/icons/menu.svg';
-import close from '@/assets/icons/close.svg';
 import NavLinks from '@/components/navigation/nav-links';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function Nav() {
   const [show, setShow] = useState(false);
@@ -23,16 +22,11 @@ export default function Nav() {
           className="flex items-center justify-center rounded-md p-2 hover:bg-gray-700 sm:hidden"
         >
           <span className="sr-only">Menü öffnen</span>
-          <Image
-            className={`${show ? 'hidden' : 'block'} size-6`}
-            src={menu}
-            alt="open-menu"
-          />
-          <Image
-            className={`${show ? 'block' : 'hidden'} size-6`}
-            src={close}
-            alt="close-menu"
-          />
+          {show ? (
+            <FontAwesomeIcon icon={faXmark} className="size-6" />
+          ) : (
+            <FontAwesomeIcon icon={faBars} className="size-6" />
+          )}
         </button>
       </div>
       <div
