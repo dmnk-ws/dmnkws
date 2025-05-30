@@ -11,9 +11,7 @@ interface NavLinkProps {
 export default function NavLink({ href, label }: NavLinkProps) {
   const activeId = useActiveSectionContext();
   const textStyle =
-    activeId === href
-      ? 'text-white'
-      : 'text-gray-400 hover:bg-gray-700 hover:text-white';
+    activeId === href ? 'text-white' : 'text-gray-400 hover:bg-white hover:text-black';
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -36,11 +34,11 @@ export default function NavLink({ href, label }: NavLinkProps) {
   );
 
   return (
-    <li className="p-3">
+    <li className="m-3">
       <a
         href={href}
         onClick={handleClick}
-        className={`${textStyle} rounded-md px-3 py-2`}
+        className={`${textStyle} rounded-4xl px-4 py-3`}
       >
         {label}
       </a>
