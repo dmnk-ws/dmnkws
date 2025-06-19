@@ -38,7 +38,7 @@ export default function NavLink({ href, label }: NavLinkProps) {
       <a
         href={href}
         onClick={handleClick}
-        className={`${textStyle} rounded-4xl px-4 py-3`}
+        className={`${textStyle} rounded-4xl px-4 py-3 font-bold text-sm md:text-base xl:text-xl`}
       >
         {label}
       </a>

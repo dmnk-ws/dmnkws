@@ -5,7 +5,13 @@ import Icon from '@/components/footer/Icon';
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center border-t border-gray-500">
+    <footer
+      className="flex flex-col justify-center border-t border-gray-500 mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl"
+      style={{
+        backgroundImage: "url('/background.svg'), url('/background.svg')",
+        backgroundPosition: 'bottom center',
+      }}
+    >
       <div className="flex flex-col justify-center mt-10 max-w-1/2 mx-auto">
         <em className="text-2xl font-bold">
           “In the end we retain from our studies only that which we practically apply.”

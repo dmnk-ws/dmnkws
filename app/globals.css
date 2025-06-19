@@ -18,7 +18,11 @@
 }
 
 body {
-  background: var(--background);
+  transition: background-color 0.2s ease-in-out;
   color: var(--foreground);
   font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+  background-image: url('/background.svg'), url('/background.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
 }
