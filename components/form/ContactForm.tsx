@@ -43,13 +43,15 @@ export default function ContactForm() {
           <Textarea label="Message" name="message" placeholder="Your message..." />
           <ErrorMessage message={state.errors?.message} />
         </div>
-        <button
-          type="submit"
-          disabled={pending}
-          className="w-full bg-gradient-to-r from-indigo-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-indigo-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all"
-        >
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            disabled={pending}
+            className="bg-gradient-to-r from-indigo-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-indigo-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all"
+          >
           {pending ? 'Sending...' : 'Send'}
-        </button>
+          </button>
+        </div>
         <FormMessage
           key={state.errors?.form ? `error-${Date.now()}` : 'error'}
           message={state.errors?.form}
