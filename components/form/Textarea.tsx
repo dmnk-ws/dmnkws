@@ -2,19 +2,11 @@ import React from 'react';
 
 interface TextareaProps {
   label: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   name: string;
   placeholder?: string;
 }
 
-export default function Textarea({
-  label,
-  value,
-  onChange,
-  name,
-  placeholder,
-}: TextareaProps) {
+export default function Textarea({ label, name, placeholder }: TextareaProps) {
   return (
     <div>
       <label htmlFor={name} className="block text-sm font-medium text-gray-300 mb-2">
@@ -23,8 +15,6 @@ export default function Textarea({
       <textarea
         id={name}
         name={name}
-        value={value}
-        onChange={onChange}
         required
         rows={6}
         className="w-full px-3 py-2 border-b-2 border-gray-300 shadow-sm focus:outline-none focus:border-b-2 focus:border-b-blue-500"
