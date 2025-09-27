@@ -1,9 +1,9 @@
-export const main = {
+export const MAIN = {
   fontFamily:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
 };
 
-export const container = {
+export const CONTAINER = {
   maxWidth: '600px',
   margin: '0 auto',
   padding: '20px',
@@ -12,35 +12,35 @@ export const container = {
   borderRadius: '8px',
 };
 
-export const header = {
+export const HEADER = {
   backgroundColor: '#f8f9fa',
   padding: '20px',
   borderRadius: '6px',
   marginBottom: '20px',
 };
 
-export const headerTitle = {
+export const HEADER_TITLE = {
   color: '#1a202c',
   fontSize: '24px',
   fontWeight: '600',
   margin: '0 0 8px 0',
 };
 
-export const headerText = {
+export const HEADER_TEXT = {
   color: '#4a5568',
   fontSize: '14px',
   margin: '0',
 };
 
-export const field = {
+export const FIELD = {
   marginBottom: '16px',
 };
 
-export const messageField = {
+export const MESSAGE_FIELD = {
   marginBottom: '20px',
 };
 
-export const label = {
+export const LABEL = {
   display: 'block',
   fontSize: '14px',
   fontWeight: '600',
@@ -49,7 +49,7 @@ export const label = {
   margin: '0 0 4px 0',
 };
 
-export const value = {
+export const VALUE = {
   margin: '0',
   padding: '8px 12px',
   backgroundColor: '#f7fafc',
@@ -59,7 +59,7 @@ export const value = {
   color: '#1a202c',
 };
 
-export const messageValue = {
+export const MESSAGE_VALUE = {
   margin: '0',
   padding: '8px 12px',
   backgroundColor: '#f7fafc',
@@ -69,18 +69,18 @@ export const messageValue = {
   color: '#1a202c',
 };
 
-export const emailLink = {
+export const EMAIL_LINK = {
   color: '#3182ce',
   textDecoration: 'none',
 };
 
-export const footer = {
+export const FOOTER = {
   borderTop: '1px solid #e2e8f0',
   paddingTop: '16px',
   textAlign: 'center' as const,
 };
 
-export const footerText = {
+export const FOOTER_TEXT = {
   fontSize: '12px',
   color: '#718096',
   margin: '0',

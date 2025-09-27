@@ -9,20 +9,20 @@ import {
   Link,
 } from '@react-email/components';
 import {
-  container,
-  emailLink,
-  field,
-  footer,
-  footerText,
-  header,
-  headerText,
-  headerTitle,
-  label,
-  main,
-  messageField,
-  messageValue,
-  value,
-} from '@/components/email/styles';
+  CONTAINER,
+  EMAIL_LINK,
+  FIELD,
+  FOOTER,
+  FOOTER_TEXT,
+  HEADER,
+  HEADER_TEXT,
+  HEADER_TITLE,
+  LABEL,
+  MAIN,
+  MESSAGE_FIELD,
+  MESSAGE_VALUE,
+  VALUE,
+} from '@/constants/email/styles';
 
 export interface Email {
   name: string;
@@ -37,33 +37,33 @@ export default function Template(email: Email) {
   return (
     <Html>
       <Head />
-      <Body style={main}>
-        <Container style={container}>
-          <Section style={header}>
-            <Heading style={headerTitle}>New Contact Form Submission</Heading>
-            <Text style={headerText}>
+      <Body style={MAIN}>
+        <Container style={CONTAINER}>
+          <Section style={HEADER}>
+            <Heading style={HEADER_TITLE}>New Contact Form Submission</Heading>
+            <Text style={HEADER_TEXT}>
               You have received a new message through your website contact form.
             </Text>
           </Section>
-          <Section style={field}>
-            <Text style={label}>Name</Text>
-            <Text style={value}>{name}</Text>
+          <Section style={FIELD}>
+            <Text style={LABEL}>Name</Text>
+            <Text style={VALUE}>{name}</Text>
           </Section>
-          <Section style={field}>
-            <Text style={label}>Email</Text>
-            <Text style={value}>
-              <Link href={`mailto:${emailAddress}`} style={emailLink}>
+          <Section style={FIELD}>
+            <Text style={LABEL}>Email</Text>
+            <Text style={VALUE}>
+              <Link href={`mailto:${emailAddress}`} style={EMAIL_LINK}>
                 {emailAddress}
               </Link>
             </Text>
           </Section>
-          <Section style={field}>
-            <Text style={label}>Subject</Text>
-            <Text style={value}>{subject}</Text>
+          <Section style={FIELD}>
+            <Text style={LABEL}>Subject</Text>
+            <Text style={VALUE}>{subject}</Text>
           </Section>
-          <Section style={messageField}>
-            <Text style={label}>Message</Text>
-            <Text style={messageValue}>
+          <Section style={MESSAGE_FIELD}>
+            <Text style={LABEL}>Message</Text>
+            <Text style={MESSAGE_VALUE}>
               {message.split('\n').map((line, index) => (
                 <span key={index}>
                   {line}
@@ -72,8 +72,8 @@ export default function Template(email: Email) {
               ))}
             </Text>
           </Section>
-          <Section style={footer}>
-            <Text style={footerText}>
+          <Section style={FOOTER}>
+            <Text style={FOOTER_TEXT}>
               This email was sent from your website contact form.
             </Text>
           </Section>
