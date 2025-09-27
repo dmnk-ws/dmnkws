@@ -10,6 +10,8 @@ export default function Footer() {
       style={{
         backgroundImage: "url('/background.svg'), url('/background.svg')",
         backgroundPosition: 'bottom center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className=" mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl flex flex-col justify-center">
