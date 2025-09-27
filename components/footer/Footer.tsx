@@ -20,7 +20,7 @@ export default function Footer() {
             “In the end we retain from our studies only that which we practically
             apply.”
           </em>
-          <span className="text-center"> — Johann Wolfgang von Goethe</span>
+          <span> — Johann Wolfgang von Goethe</span>
         </div>
         <div className="flex justify-center mt-10">
           <Icon href="https://github.com/dmnk-ws" icon={faGithub} />
