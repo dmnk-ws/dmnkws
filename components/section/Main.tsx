@@ -3,9 +3,10 @@
 import { Typewriter } from 'react-simple-typewriter';
 import Image from 'next/image';
 import laptop from '../../assets/images/laptop.png';
+import { IAM } from '@/constants/main/iam';
 
 export default function Main() {
-  const introText = "I'm Dominik, a ";
+  const introText = "hey! I'm a ";
 
   return (
     <section
@@ -13,18 +14,11 @@ export default function Main() {
       className="grid grid-cols-1 xl:grid-cols-2 gap-2 h-[calc(100vh-72px)] md:h-[calc(100vh-96px)] xl:h-[calc(100vh-100px)]"
     >
       <div className="flex flex-col h-auto xl:h-full mt-20 xl:mt-55">
-        <h1 className="text-3xl md:text-6xl font-bold mb-4">hey!</h1>
         <h1 className="text-3xl md:text-6xl font-bold mb-4">{introText}</h1>
         <h1 className="text-3xl md:text-6xl mb-4 pb-2 font-bold bg-gradient-to-r from-indigo-600 to-pink-200 bg-clip-text text-transparent">
           <Typewriter
             loop={0}
-            words={[
-              'react developer',
-              'php architect',
-              'symfony lover',
-              'type-safe writer',
-              'ai enthusiast',
-            ]}
+            words={IAM}
             cursor
             typeSpeed={250}
             deleteSpeed={150}
