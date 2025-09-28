@@ -20,8 +20,8 @@ export default function Main() {
             loop={0}
             words={IAM}
             cursor
-            typeSpeed={250}
-            deleteSpeed={150}
+            typeSpeed={125}
+            deleteSpeed={50}
             delaySpeed={1000}
           />
         </h1>
