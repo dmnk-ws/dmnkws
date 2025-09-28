@@ -7,6 +7,7 @@ import { EXPERIENCES } from '@/constants/about/experiences';
 import { EDUCATION } from '@/constants/about/education';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import Header from '@/components/section/Header';
 
 export interface Item {
   dateRange: string;
@@ -42,8 +43,8 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full place-items-center">
         <div className="lg:col-span-1">
           <div className="prose prose-lg text-white mb-8">
-            <h2 className="text-3xl md:text-6xl font-bold mb-4">dominik wies</h2>
-            <h3 className="text-xl md:text-3xl font-bold mb-4">[software developer]</h3>
+            <Header header="dominik wies" />
+            <h2 className="text-xl md:text-3xl font-bold mb-4">[software developer]</h2>
             <p>
               When I&apos;m not at the computer, I&apos;m usually improving my piano
               skills, reading, hanging out with my wife and two cats, or battling the
