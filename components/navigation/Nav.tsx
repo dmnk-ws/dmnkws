@@ -18,7 +18,9 @@ export default function Nav() {
       setScrolled(window.scrollY > 0);
     };
 
+    onScroll();
     window.addEventListener('scroll', onScroll);
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
