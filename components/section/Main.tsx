@@ -26,10 +26,11 @@ export default function Main() {
           />
         </h1>
         <p className="py-4">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-          eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-          voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          Technology is my playground. I love turning complex problems into simple,
+          elegant solutions. With a passion for clean code and modern web technologies,
+          I create digital experiences that are both functional and delightful to use.
+          From frontend interactions to backend logic, I enjoy exploring new ideas and
+          shaping them into real, impactful products.
         </p>
       </div>
       <div className="flex justify-center h-auto xl:h-full">
