@@ -64,7 +64,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
                 </span>
                 <FontAwesomeIcon
                   icon={faArrowUpRightFromSquare}
-                  className="w-3 h-3 text-white group-hover:text-pink-600"
+                  className="px-2 w-3 h-3 text-white group-hover:text-pink-600"
                 />
               </div>
             </div>
