@@ -1,4 +1,6 @@
-export const EXPERIENCES = [
+import { Item } from '@/components/section/About';
+
+export const EXPERIENCES: Item[] = [
   {
     dateRange: '2024 — PRESENT',
     title: 'Software Developer',

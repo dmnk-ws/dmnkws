@@ -1,4 +1,6 @@
-export const EDUCATION = [
+import { Item } from '@/components/section/About';
+
+export const EDUCATION: Item[] = [
   {
     dateRange: '2020 — 2024',
     title: 'Bachelor of Science in Digital Media',
