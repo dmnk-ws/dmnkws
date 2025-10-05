@@ -8,6 +8,8 @@ import { EDUCATION } from '@/constants/about/education';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import Header from '@/components/section/Header';
+import Section from '@/components/section/Section';
+import Grid from '@/components/section/Grid';
 
 export interface Item {
   dateRange: string;
@@ -36,12 +38,9 @@ export default function About() {
   }, []);
 
   return (
-    <section
-      id="about"
-      className="min-h-[calc(100vh-72px)] md:min-h-[calc(100vh-96px)] xl:min-h-[calc(100vh-100px)] flex items-center justify-center"
-    >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full place-items-center">
-        <div className="lg:col-span-1">
+    <Section id="about" grid>
+      <Grid>
+        <div className="flex flex-col justify-center">
           <div className="prose prose-lg text-white mb-8">
             <Header header="dominik wies" />
             <h2 className="text-xl md:text-3xl font-bold mb-4">[software developer]</h2>
@@ -52,20 +51,22 @@ export default function About() {
             </p>
           </div>
           <Navigator sections={sections} onActiveItemChange={handleActiveItemChange} />
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-indigo-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer transition-all"
-          >
-            <span className="pr-2">View full resume</span>
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-          </a>
+          <div>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-indigo-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer transition-all"
+            >
+              <span className="pr-2">View full resume</span>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </a>
+          </div>
         </div>
-        <div className="lg:col-span-1">
+        <div className="flex items-center justify-center">
           <Card {...activeItem} isHighlighted={false} />
         </div>
-      </div>
-    </section>
+      </Grid>
+    </Section>
   );
 }

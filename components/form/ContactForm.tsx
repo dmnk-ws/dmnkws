@@ -13,11 +13,17 @@ export default function ContactForm() {
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <form action={formAction} className="space-y-6">
+    <div className="flex items-center justify-center mx-0 lg:mx-25 xl:mx-50">
+      <form action={formAction} className="space-y-6 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <Input label="Name" name="name" type="text" placeholder="Your name..." />
+            <Input
+              label="Name"
+              name="name"
+              type="text"
+              placeholder="Your name..."
+              autoComplete="name"
+            />
             <ErrorMessage message={state.errors?.name} />
           </div>
           <div>
@@ -26,6 +32,7 @@ export default function ContactForm() {
               name="email"
               type="email"
               placeholder="Your email..."
+              autoComplete="email"
             />
             <ErrorMessage message={state.errors?.emailAddress} />
           </div>
@@ -36,6 +43,7 @@ export default function ContactForm() {
             name="subject"
             type="text"
             placeholder="What's this about?"
+            autoComplete="off"
           />
           <ErrorMessage message={state.errors?.subject} />
         </div>
@@ -49,7 +57,7 @@ export default function ContactForm() {
             disabled={pending}
             className="bg-gradient-to-r from-indigo-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-indigo-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all"
           >
-          {pending ? 'Sending...' : 'Send'}
+            {pending ? 'Sending...' : 'Send'}
           </button>
         </div>
         <FormMessage

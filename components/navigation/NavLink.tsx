@@ -9,9 +9,9 @@ interface NavLinkProps {
 }
 
 export default function NavLink({ href, label }: NavLinkProps) {
-  const activeId = useActiveSectionContext();
+  const { section, setSection } = useActiveSectionContext();
   const textStyle =
-    activeId === href ? 'text-white' : 'text-gray-400 hover:bg-white hover:text-black';
+    section === href ? 'text-white' : 'text-gray-400 hover:bg-white hover:text-black';
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -28,9 +28,10 @@ export default function NavLink({ href, label }: NavLinkProps) {
           navbar.getBoundingClientRect().height;
 
         window.scrollTo({ top: y, behavior: 'smooth' });
+        setSection(href);
       }
     },
-    [href]
+    [href, setSection]
   );
 
   return (
@@ -38,7 +39,7 @@ export default function NavLink({ href, label }: NavLinkProps) {
       <a
         href={href}
         onClick={handleClick}
-        className={`${textStyle} rounded px-4 py-3 font-bold text-sm md:text-base xl:text-xl`}
+        className={`${textStyle} rounded p-0 lg:px-4 lg:py-3 font-bold text-sm md:text-base xl:text-xl`}
       >
         {label}
       </a>
