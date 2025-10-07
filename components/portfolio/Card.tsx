@@ -7,7 +7,6 @@ import Image from 'next/image';
 export interface Project {
   title: string;
   description: string;
-  technologies: string[];
   img?: StaticImageData;
   githubUrl: string;
 }

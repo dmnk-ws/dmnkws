@@ -5,6 +5,7 @@ import NavLinks from '@/components/navigation/NavLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useActiveSectionContext } from '@/context/ActiveSectionProvider';
+import LanguageSelect from '@/components/navigation/LanguageSelect';
 
 export default function Nav() {
   const [show, setShow] = useState(false);
@@ -18,7 +19,7 @@ export default function Nav() {
   const handleClick = useCallback(() => {
     setShow((prev) => {
       const isOpening = !prev;
-      const scrollOffset = section === '#home' ? 0 : isOpening ? -192 : 192;
+      const scrollOffset = section === '#home' ? 0 : isOpening ? -181 : 181;
 
       window.scrollBy({
         top: scrollOffset,
@@ -46,23 +47,26 @@ export default function Nav() {
     >
       <div className="flex justify-between mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl items-center">
         <a
-          className="text-white font-bold text-sm md:text-base xl:text-xl py-3"
+          className="text-white font-bold text-sm md:text-base xl:text-xl py-1 lg:py-3"
           href="#home"
         >
           dmnkws.dev
         </a>
-        <NavLinks className="hidden sm:flex gap-2 xl:gap-10 justify-end" />
-        <button
-          type="button"
-          onClick={handleClick}
-          className="flex items-center justify-center rounded-md p-2 hover:bg-gray-700 sm:hidden"
-        >
-          {show ? (
-            <FontAwesomeIcon icon={faXmark} className="size-6" />
-          ) : (
-            <FontAwesomeIcon icon={faBars} className="size-6" />
-          )}
-        </button>
+        <div className="flex flex-row gap-4 lg:gap-12">
+          <NavLinks className="hidden sm:flex gap-2 xl:gap-10 justify-end" />
+          <LanguageSelect />
+          <button
+            type="button"
+            onClick={handleClick}
+            className="flex items-center justify-center rounded-md p-2 hover:bg-gray-700 sm:hidden"
+          >
+            {show ? (
+              <FontAwesomeIcon icon={faXmark} className="size-6" />
+            ) : (
+              <FontAwesomeIcon icon={faBars} className="size-6" />
+            )}
+          </button>
+        </div>
       </div>
       <div
         className={`${dropDownStyle} transition-all duration-500 ease-out overflow-hidden sm:hidden`}

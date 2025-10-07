@@ -14,7 +14,7 @@ export default function NavLink({ href, label }: NavLinkProps) {
     section === href ? 'text-white' : 'text-gray-400 hover:bg-white hover:text-black';
 
   const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>) => {
+    (e: React.MouseEvent<HTMLLIElement>) => {
       e.preventDefault();
 
       const id = href.replace('#', '');
@@ -35,14 +35,11 @@ export default function NavLink({ href, label }: NavLinkProps) {
   );
 
   return (
-    <li className="m-3">
-      <a
-        href={href}
-        onClick={handleClick}
-        className={`${textStyle} rounded p-0 lg:px-4 lg:py-3 font-bold text-sm md:text-base xl:text-xl`}
-      >
-        {label}
-      </a>
+    <li
+      onClick={handleClick}
+      className={`${textStyle} rounded px-2 py-1 lg:px-4 lg:py-3 font-bold text-sm md:text-base xl:text-xl cursor-pointer`}
+    >
+      <a href={href}>{label}</a>
     </li>
   );
 }

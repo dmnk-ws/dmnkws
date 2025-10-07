@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import Card from './Card';
 import Chevron from './Chevron';
-import { PROJECTS } from '@/constants/portfolio/projects';
+import { getProjects } from '@/constants/portfolio/projects';
+import { useTranslation } from '@/context/TranslationContext';
 
 const CARD_WIDTH = 400;
 const GAP = 32;
@@ -14,6 +15,9 @@ export default function Carousel() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [maxIndex, setMaxIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
+  const projects = useMemo(() => getProjects(t), [t]);
+  const projectsLength = projects.length;
 
   const scrollToIndex = useCallback(
     (index: number) => {
@@ -51,16 +55,16 @@ export default function Carousel() {
       const cardsVisible = Math.floor(
         containerWidth / (CARD_WIDTH + GAP - CHEVRON_WIDTH)
       );
-      const actualCardsVisible = Math.max(1, Math.min(cardsVisible, PROJECTS.length));
+      const actualCardsVisible = Math.max(1, Math.min(cardsVisible, projectsLength));
 
-      setMaxIndex(Math.max(0, PROJECTS.length - actualCardsVisible));
+      setMaxIndex(Math.max(0, projectsLength - actualCardsVisible));
     };
 
     calculateMaxIndex();
     window.addEventListener('resize', calculateMaxIndex);
 
     return () => window.removeEventListener('resize', calculateMaxIndex);
-  }, []);
+  }, [projectsLength]);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -98,7 +102,7 @@ export default function Carousel() {
           scrollbarWidth: 'none',
         }}
       >
-        {PROJECTS.map((project) => (
+        {projects.map((project) => (
           <Card key={project.title} project={project} width={CARD_WIDTH} />
         ))}
       </div>

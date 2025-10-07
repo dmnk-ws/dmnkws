@@ -1,13 +1,13 @@
 import { Item } from '@/components/section/About';
+import { TFunction } from '@/context/TranslationContext';
 
-export const EXPERIENCES: Item[] = [
+export const getExperiences = (t: TFunction): Item[] => [
   {
-    dateRange: '2024 — PRESENT',
-    title: 'Software Developer',
+    dateRange: '2024 — ' + t('present').toUpperCase(),
+    title: t('occupation'),
     company: 'EELOY AG',
     companyUrl: 'https://www.eeloy.com/',
-    description:
-      'Developed a responsive web application, enhancing user experience by upgrading the project to the latest version. Improved code quality by implementing high-standard testing practices. Created and optimized backend routes to support the new frontend. Collaborated closely with designers to deliver pixel-perfect interfaces using modern frontend technologies.\n',
+    description: t('experienceDescriptionPresent'),
     technologies: [
       'TypeScript',
       'React',
@@ -24,20 +24,18 @@ export const EXPERIENCES: Item[] = [
   },
   {
     dateRange: '2024 — 2024',
-    title: 'Research Student (Bachelor thesis)',
+    title: t('experienceTitleResearch'),
     company: 'EELOY AG',
     companyUrl: 'https://www.eeloy.com/',
-    description:
-      'Conducted a feasibility study to predict Customer Lifetime Value using internal company data. Trained and compared Deep Neural Network (DNN) and Random Forest models to evaluate predictive performance, applying data analysis and machine learning techniques to deliver actionable insights.',
+    description: t('experienceDescriptionThesis'),
     technologies: ['Python', 'Scikit-Learn', 'TensorFlow', 'pandas', 'numpy'],
   },
   {
     dateRange: '2022 — 2024',
-    title: 'Frontend Developer Intern',
+    title: t('experienceTitleIntern'),
     company: 'EELOY AG',
     companyUrl: 'https://www.eeloy.com/',
-    description:
-      'Built and maintained web applications while learning industry best practices. Contributed to both frontend and backend development in a multi-tenant system.',
+    description: t('experienceDescriptionIntern'),
     technologies: [
       'HTML5',
       'CSS3',

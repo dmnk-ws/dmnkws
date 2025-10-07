@@ -1,9 +1,14 @@
+'use client';
+
 import React from 'react';
 import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import Icon from '@/components/footer/Icon';
+import { useTranslation } from '@/context/TranslationContext';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer
       className="border-t border-gray-500 flex flex-col justify-center"
@@ -16,10 +21,7 @@ export default function Footer() {
     >
       <div className=" mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl flex flex-col justify-center">
         <div className="flex flex-col justify-center mt-10 max-w-1/2 mx-auto">
-          <em className="text-2xl font-bold">
-            “In the end we retain from our studies only that which we practically
-            apply.”
-          </em>
+          <em className="text-2xl font-bold">“{t('cite')}”</em>
           <span> — Johann Wolfgang von Goethe</span>
         </div>
         <div className="flex justify-center mt-10">
@@ -32,7 +34,7 @@ export default function Footer() {
           <Icon href="mailto:domi.wies@googlemail.com" icon={faPaperPlane} />
         </div>
         <div className="flex justify-center my-10">
-          &copy; Copyright {new Date().getUTCFullYear()}. Made by Dominik Wies
+          &copy; Copyright {new Date().getUTCFullYear()}. {t('madeBy')} Dominik Wies
         </div>
       </div>
     </footer>
