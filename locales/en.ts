@@ -38,7 +38,7 @@ export const en = {
   movieBaseDescription:
     'A sleek web application that lets users discover and explore movies effortlessly. It fetches real-time data from a movie database API, displaying key details like ratings, genres, release dates, and summaries',
   groBroDescription:
-    'Interactive weather dashboard with location-based forecasts, historical data visualization, and severe weather alerts.',
+    'Grocery inventory management app that tracks products and expiration dates, fetches product details via barcode scanning, and helps reduce food waste.',
   contactHeader: "Let's get in touch.",
   contactSubheader:
     'You have a question, proposal or simply want to say hello? Just go ahead.',

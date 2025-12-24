@@ -38,7 +38,7 @@ export const es = {
   movieBaseDescription:
     'Una aplicación web elegante que permite a los usuarios descubrir y explorar películas fácilmente. Obtiene datos en tiempo real de una API de base de datos de películas y muestra información clave como valoraciones, géneros, fechas de estreno y sinopsis.',
   groBroDescription:
-    'Panel meteorológico interactivo con pronósticos basados en la ubicación, visualización de datos históricos y alertas de condiciones meteorológicas extremas.',
+    'Aplicación de gestión de inventario de comestibles que rastrea productos y fechas de caducidad, obtiene detalles de productos mediante escaneo de códigos de barras y ayuda a reducir el desperdicio de alimentos.',
   contactHeader: 'Pongámonos en contacto.',
   contactSubheader:
     '¿Tienes una pregunta, una propuesta o simplemente quieres saludar? Adelante.',

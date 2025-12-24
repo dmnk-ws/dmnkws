@@ -38,7 +38,7 @@ export const de = {
   movieBaseDescription:
     'Eine elegante Webanwendung, die es Nutzern ermöglicht, Filme mühelos zu entdecken und zu erkunden. Sie ruft Echtzeitdaten aus einer Filmdatenbank-API ab und zeigt wichtige Informationen wie Bewertungen, Genres, Veröffentlichungsdaten und Zusammenfassungen an.',
   groBroDescription:
-    'Interaktives Wetter-Dashboard mit standortbasierten Vorhersagen, Visualisierung historischer Daten und Warnungen vor extremen Wetterbedingungen.',
+    'App zur Verwaltung von Lebensmittelbeständen, die Produkte und Haltbarkeitsdaten verfolgt, Produktdetails via Barcode-Scan abruft und dabei hilft, Lebensmittelverschwendung zu reduzieren.',
   contactHeader: 'Lass uns in Kontakt treten.',
   contactSubheader:
     'Du hast eine Frage, einen Vorschlag oder möchtest einfach nur Hallo sagen? Nur zu.',
