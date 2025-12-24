@@ -34,6 +34,7 @@ export default function Home() {
             <Image
               src={laptop}
               alt="Laptop image"
+              priority
               className="w-auto h-75 md:h-125 xl:w-full xl:h-auto"
             />
           </div>
