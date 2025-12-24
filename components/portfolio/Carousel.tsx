@@ -6,26 +6,32 @@ import Chevron from './Chevron';
 import { getProjects } from '@/constants/portfolio/projects';
 import { useTranslation } from '@/context/TranslationContext';
 
-const CARD_WIDTH = 400;
-const GAP = 32;
+const CARD_WIDTH_DESKTOP = 400;
+const CARD_WIDTH_MOBILE = 300;
+const GAP_DESKTOP = 32;
+const GAP_MOBILE = 16;
 const CHEVRON_WIDTH = 48;
+const MOBILE_BREAKPOINT = 640;
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [maxIndex, setMaxIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const projects = useMemo(() => getProjects(t), [t]);
   const projectsLength = projects.length;
+  const cardWidth = isMobile ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP;
+  const gap = isMobile ? GAP_MOBILE : GAP_DESKTOP;
 
   const scrollToIndex = useCallback(
     (index: number) => {
       if (!sliderRef.current || isScrolling) return;
 
       const newIndex = Math.max(0, Math.min(index, maxIndex));
-      const chevronOffset = newIndex > 0 ? CHEVRON_WIDTH : 0;
-      const scrollLeft = newIndex * (CARD_WIDTH + GAP) - chevronOffset;
+      const chevronOffset = !isMobile && newIndex > 0 ? CHEVRON_WIDTH : 0;
+      const scrollLeft = newIndex * (cardWidth + gap) - chevronOffset;
 
       sliderRef.current.scrollTo({
         left: scrollLeft,
@@ -36,7 +42,7 @@ export default function Carousel() {
       setCurrentIndex(newIndex);
       setTimeout(() => setIsScrolling(false), 500);
     },
-    [isScrolling, maxIndex]
+    [isScrolling, maxIndex, isMobile, cardWidth, gap]
   );
 
   const handlePrevious = useCallback(() => {
@@ -48,22 +54,27 @@ export default function Carousel() {
   }, [currentIndex, scrollToIndex]);
 
   useEffect(() => {
-    const calculateMaxIndex = () => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < MOBILE_BREAKPOINT;
+      setIsMobile(mobile);
+
       if (!sliderRef.current) return;
 
-      const containerWidth = sliderRef.current.clientWidth - 64;
+      const currentCardWidth = mobile ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP;
+      const currentGap = mobile ? GAP_MOBILE : GAP_DESKTOP;
+      const containerWidth = sliderRef.current.clientWidth - (mobile ? 32 : 64);
       const cardsVisible = Math.floor(
-        containerWidth / (CARD_WIDTH + GAP - CHEVRON_WIDTH)
+        containerWidth / (currentCardWidth + currentGap - (mobile ? 0 : CHEVRON_WIDTH))
       );
       const actualCardsVisible = Math.max(1, Math.min(cardsVisible, projectsLength));
 
       setMaxIndex(Math.max(0, projectsLength - actualCardsVisible));
     };
 
-    calculateMaxIndex();
-    window.addEventListener('resize', calculateMaxIndex);
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener('resize', calculateMaxIndex);
+    return () => window.removeEventListener('resize', handleResize);
   }, [projectsLength]);
 
   useEffect(() => {
@@ -75,8 +86,9 @@ export default function Carousel() {
       if (!sliderRef.current) return;
 
       const scrollLeft = sliderRef.current.scrollLeft;
-      const adjustedScrollLeft = Math.max(0, scrollLeft - CHEVRON_WIDTH);
-      const newIndex = Math.round(adjustedScrollLeft / (CARD_WIDTH + GAP));
+      const chevronOffset = isMobile ? 0 : CHEVRON_WIDTH;
+      const adjustedScrollLeft = Math.max(0, scrollLeft - chevronOffset);
+      const newIndex = Math.round(adjustedScrollLeft / (cardWidth + gap));
 
       setCurrentIndex(Math.min(newIndex, maxIndex));
     };
@@ -84,34 +96,39 @@ export default function Carousel() {
     slider.addEventListener('scroll', handleScroll);
 
     return () => slider.removeEventListener('scroll', handleScroll);
-  }, [isScrolling, maxIndex]);
+  }, [isScrolling, maxIndex, isMobile, cardWidth, gap]);
 
   return (
     <div className="relative">
-      <Chevron
-        orientation="left"
-        isDisabled={currentIndex === 0}
-        onClick={handlePrevious}
-        width={CHEVRON_WIDTH}
-      />
+      {!isMobile && (
+        <Chevron
+          orientation="left"
+          isDisabled={currentIndex === 0}
+          onClick={handlePrevious}
+          width={CHEVRON_WIDTH}
+        />
+      )}
       <div
         ref={sliderRef}
-        className="flex overflow-x-auto p-8"
+        className="flex overflow-x-auto p-8 sm:p-8 px-4 snap-x snap-mandatory"
         style={{
-          gap: GAP,
+          gap,
           scrollbarWidth: 'none',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {projects.map((project) => (
-          <Card key={project.title} project={project} width={CARD_WIDTH} />
+          <Card key={project.title} project={project} width={cardWidth} />
         ))}
       </div>
-      <Chevron
-        orientation="right"
-        isDisabled={currentIndex >= maxIndex}
-        onClick={handleNext}
-        width={CHEVRON_WIDTH}
-      />
+      {!isMobile && (
+        <Chevron
+          orientation="right"
+          isDisabled={currentIndex >= maxIndex}
+          onClick={handleNext}
+          width={CHEVRON_WIDTH}
+        />
+      )}
     </div>
   );
 }

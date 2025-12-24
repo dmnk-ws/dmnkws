@@ -20,8 +20,8 @@ export default function Footer() {
       }}
     >
       <div className=" mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl flex flex-col justify-center">
-        <div className="flex flex-col justify-center mt-10 max-w-1/2 mx-auto">
-          <em className="text-2xl font-bold">“{t('cite')}”</em>
+        <div className="flex flex-col justify-center mt-10 md:max-w-1/2 mx-auto">
+          <em className="text-lg md:text-2xl font-bold">“{t('cite')}”</em>
           <span> — Johann Wolfgang von Goethe</span>
         </div>
         <div className="flex justify-center mt-10">
@@ -33,8 +33,9 @@ export default function Footer() {
           <Icon href="https://www.instagram.com/dmnkws/" icon={faInstagram} />
           <Icon href="mailto:domi.wies@googlemail.com" icon={faPaperPlane} />
         </div>
-        <div className="flex justify-center my-10">
-          &copy; Copyright {new Date().getUTCFullYear()}. {t('madeBy')} Dominik Wies
+        <div className="flex flex-col justify-center items-center my-10">
+          <p>&copy; Copyright {new Date().getUTCFullYear()}.</p>
+          <p>{t('madeBy')} Dominik Wies</p>
         </div>
       </div>
     </footer>

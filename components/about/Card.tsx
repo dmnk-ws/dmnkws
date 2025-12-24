@@ -34,7 +34,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <div
         ref={ref}
-        className={`group p-12 rounded-lg cursor-pointer ${
+        className={`group py-12 px-0 md:p-12 rounded-lg cursor-pointer ${
           isHighlighted
             ? 'bg-gray-800/50 backdrop-blur-sm'
             : 'hover:bg-gray-800/30 hover:backdrop-blur-sm'

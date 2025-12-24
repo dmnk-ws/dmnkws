@@ -22,7 +22,7 @@ function Card({ project, width }: CardProps) {
       href={project.githubUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex-shrink-0 w-80 bg-gray-800/50 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-gray-900/60 hover:ring hover:ring-white block"
+      className="group flex-shrink-0 bg-gray-800/50 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-gray-900/60 hover:ring hover:ring-white block snap-start"
       style={{ width }}
     >
       <div className="aspect-video relative overflow-hidden">
