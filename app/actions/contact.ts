@@ -5,6 +5,8 @@ import Template from '@/components/email/Template';
 import { validateContactForm, type ContactFormErrors } from '@/lib/validations/contact';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const to = process.env.RESEND_TO;
+const from = process.env.RESEND_FROM;
 
 export type ContactFormState = {
   success?: boolean;
@@ -31,12 +33,20 @@ export async function submitContactForm(
     };
   }
 
+  if (!to || !from) {
+    return {
+      errors: {
+        form: 'Failed to send email. Please try again.',
+      },
+    };
+  }
+
   try {
     const { name, emailAddress, subject, message } = data;
 
     const { error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'domi.wies@googlemail.com',
+      from,
+      to,
       subject: `Contact Form: ${subject}`,
       react: Template({ name, emailAddress, subject, message }),
     });
