@@ -14,7 +14,7 @@ export default function Main() {
         <header>
           <Nav />
         </header>
-        <main className="mx-14 md:mx-25 2xl:mx-auto max-w-screen-xl mt-18 md:mt-24 xl:mt-25">
+        <main className="mx-10 md:mx-25 2xl:mx-auto max-w-screen-xl mt-18 md:mt-24 xl:mt-25">
           <Home />
           <About />
           <Portfolio />

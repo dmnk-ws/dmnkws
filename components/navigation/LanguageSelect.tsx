@@ -30,12 +30,13 @@ export default function LanguageSelect() {
       className="relative"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
+      onClick={() => setIsOpen((prev) => !prev)}
     >
-      <div className="flex items-center text-gray-400 hover:bg-white hover:text-black rounded px-2 py-1 lg:px-4 lg:py-3 font-bold text-sm md:text-base xl:text-xl transition-colors duration-200 cursor-default">
+      <div className="flex items-center text-gray-400 hover:bg-white hover:text-black rounded px-2 py-1 lg:px-4 lg:py-3 font-bold text-xl sm:text-base xl:text-xl transition-colors duration-200 cursor-default">
         <span>{currentLanguage?.label || 'EN'}</span>
         <FontAwesomeIcon
           icon={faChevronDown}
-          className={`size-3 lg:size-4 ml-2 transition-transform duration-300 ${
+          className={`size-4 lg:size-4 ml-2 transition-transform duration-300 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />

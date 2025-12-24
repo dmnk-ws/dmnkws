@@ -8,7 +8,13 @@ interface InputProps {
   autoComplete?: string;
 }
 
-export default function Input({ label, name, type, placeholder, autoComplete }: InputProps) {
+export default function Input({
+  label,
+  name,
+  type,
+  placeholder,
+  autoComplete,
+}: InputProps) {
   return (
     <div>
       <label htmlFor={name} className="block text-sm font-medium text-gray-300 mb-2">

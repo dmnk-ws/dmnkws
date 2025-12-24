@@ -14,7 +14,10 @@ function LanguageOption({ code, label, onLanguageSelect }: LanguageOptionProps) 
 
   return (
     <div
-      onClick={() => onLanguageSelect(code)}
+      onClick={(e) => {
+        e.stopPropagation();
+        onLanguageSelect(code);
+      }}
       className={`p-2 lg:px-4 lg:py-2 font-bold text-sm md:text-base xl:text-xl cursor-pointer transition-colors duration-200 ${
         language === code
           ? 'text-white bg-gray-700'
