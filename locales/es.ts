@@ -21,7 +21,10 @@ export const es = {
   experienceDescriptionIntern:
     'Desarrollé y mantuve aplicaciones web mientras aprendía las mejores prácticas de la industria. Contribuí tanto al desarrollo frontend como backend en un sistema multiinquilino.',
   education: 'educación',
-  educationTitleBachelor: 'Licenciatura en Ciencias en Medios Digitales',
+  educationTitleMaster: 'Global Software Development (M.Sc.)',
+  educationDescriptionMaster:
+    'Enfocado en el diseño e implementación de sistemas de software distribuidos en equipos globalmente diversos. Adquiriendo experiencia en múltiples lenguajes de programación, metodologías ágiles y desarrollo centrado en el usuario a través de un amplio aprendizaje basado en proyectos.',
+  educationTitleBachelor: 'Medios Digitales (B.Sc.)',
   educationDescriptionBachelor:
     'Estudié fundamentos de la informática, incluyendo algoritmos, estructuras de datos, ingeniería de software, aplicaciones web y sistemas de bases de datos. Completé varios cursos de diseño enfocados en interfaces de usuario, usabilidad e interacción humano-computadora.',
   educationTitleExchange: 'Programa de Estudiante de Intercambio',

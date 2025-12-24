@@ -21,7 +21,10 @@ export const de = {
   experienceDescriptionIntern:
     'Erstellte und wartete Webanwendungen, während Branchen-Best-Practices erlernt wurden. Trug sowohl zur Frontend- als auch zur Backend-Entwicklung in einem Multi-Tenant-System bei.',
   education: 'ausbildung',
-  educationTitleBachelor: 'Bachelor of Science in Digitale Medien',
+  educationTitleMaster: 'Global Software Development (M.Sc.)',
+  educationDescriptionMaster:
+    'Fokus auf das Design und die Implementierung verteilter Softwaresysteme in global diversen Teams. Erwerbe Expertise in mehreren Programmiersprachen, agilen Methoden und nutzerzentrierter Entwicklung durch umfangreiche projektbasierte Arbeit.',
+  educationTitleBachelor: 'Digitale Medien (B.Sc.)',
   educationDescriptionBachelor:
     'Studierte Grundlagen der Informatik, einschließlich Algorithmen, Datenstrukturen, Software Engineering, Webanwendungen und Datenbanksysteme. Absolvierte mehrere Designkurse mit Schwerpunkt auf Benutzeroberflächen, Usability und Mensch-Computer-Interaktion.',
   educationTitleExchange: 'Austauschstudentenprogramm',

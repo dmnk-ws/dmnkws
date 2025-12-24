@@ -3,6 +3,28 @@ import { TFunction } from '@/context/TranslationContext';
 
 export const getEducation = (t: TFunction): Item[] => [
   {
+    dateRange: '2025 — PRESENT',
+    title: t('educationTitleMaster'),
+    company: 'Hochschule Fulda – University of Applied Sciences',
+    companyUrl: 'https://www.hs-fulda.de/',
+    description: t('educationDescriptionMaster'),
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'TypeScript',
+      'NodeJS',
+      'Angular',
+      'Vue',
+      'Jasmine',
+      'Java',
+      'Spring',
+      'Python',
+      'numpy',
+      'tensorflow',
+    ],
+  },
+  {
     dateRange: '2020 — 2024',
     title: t('educationTitleBachelor'),
     company: 'Hochschule Fulda – University of Applied Sciences',

@@ -21,7 +21,10 @@ export const en = {
   experienceDescriptionIntern:
     'Built and maintained web applications while learning industry best practices. Contributed to both frontend and backend development in a multi-tenant system.',
   education: 'education',
-  educationTitleBachelor: 'Bachelor of Science in Digital Media',
+  educationTitleMaster: 'Global Software Development (M.Sc.)',
+  educationDescriptionMaster:
+    'Focusing on designing and implementing distributed software systems within globally diverse teams. Gaining expertise in multiple programming languages, agile methodologies, and user-centered development through extensive project-based learning.',
+  educationTitleBachelor: 'Digital Media (B.Sc.)',
   educationDescriptionBachelor:
     'Studied computer science fundamentals including algorithms, data structures, software engineering, web applications and database systems. Completed several design courses with a focus on user interfaces, usability and human computer interaction.',
   educationTitleExchange: 'Exchange Student Program',

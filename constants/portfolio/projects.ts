@@ -1,5 +1,6 @@
 import type { Project } from '@/components/portfolio/Card';
-import mobile from '../../assets/images/mobile.jpg';
+import movieBase from '../../assets/images/moviebase.png';
+import groBro from '../../assets/images/grobro.png';
 import { TFunction } from '@/context/TranslationContext';
 
 export const getProjects = (t: TFunction): Project[] => [
@@ -16,12 +17,13 @@ export const getProjects = (t: TFunction): Project[] => [
   {
     title: 'Moviebase',
     description: t('movieBaseDescription'),
-    img: mobile,
+    img: movieBase,
     githubUrl: 'https://github.com/dmnk-ws/moviebase',
   },
   {
     title: 'GroBro',
     description: t('groBroDescription'),
+    img: groBro,
     githubUrl: 'https://github.com/dmnk-ws/',
   },
 ];
