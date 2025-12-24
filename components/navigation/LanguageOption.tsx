@@ -18,7 +18,7 @@ function LanguageOption({ code, label, onLanguageSelect }: LanguageOptionProps) 
         e.stopPropagation();
         onLanguageSelect(code);
       }}
-      className={`p-2 lg:px-4 lg:py-2 font-bold text-sm md:text-base xl:text-xl cursor-pointer transition-colors duration-200 ${
+      className={`p-4 md:p-2 lg:px-4 lg:py-2 font-bold text-3xl md:text-base xl:text-xl cursor-pointer transition-colors duration-200 ${
         language === code
           ? 'text-white bg-gray-700'
           : 'text-gray-400 hover:bg-white hover:text-black'

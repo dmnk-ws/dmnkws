@@ -43,7 +43,7 @@ export default function LanguageSelect() {
       </div>
       <div
         className={`absolute top-full left-0 right-0 mt-1 rounded bg-background overflow-hidden transition-all duration-300 ${
-          isOpen ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'
+          isOpen ? 'opacity-100 max-h-60' : 'opacity-0 max-h-0'
         }`}
       >
         {languages.map((lang) => (
