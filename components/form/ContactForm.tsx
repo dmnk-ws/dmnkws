@@ -17,6 +17,14 @@ export default function ContactForm() {
   return (
     <div className="flex items-center justify-center mx-0 lg:mx-25 xl:mx-50">
       <form action={formAction} className="space-y-6 w-full">
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute h-0 w-0 overflow-hidden"
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <Input
@@ -61,7 +69,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={pending}
-            className="bg-gradient-to-r from-indigo-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-indigo-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all"
+            className="bg-linear-to-r from-indigo-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-indigo-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all"
           >
             {pending ? t('sending') : t('send')}
           </button>
