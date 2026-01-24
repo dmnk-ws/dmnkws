@@ -5,7 +5,11 @@ interface HeaderProps {
 }
 
 function Header({ header }: HeaderProps) {
-  return <h1 className="text-3xl md:text-6xl font-bold mb-4">{header}</h1>;
+  return (
+    <h1 data-testid="home-h1" className="text-3xl md:text-6xl font-bold mb-4">
+      {header}
+    </h1>
+  );
 }
 
 export default memo(Header);
