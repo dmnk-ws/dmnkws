@@ -75,12 +75,12 @@ export default function ContactForm() {
           </button>
         </div>
         <FormMessage
-          key={state.errors?.form ? `error-${Date.now()}` : 'error'}
+          key={state.errors?.form ?? 'no-error'}
           message={state.errors?.form}
           type="error"
         />
         <FormMessage
-          key={state.success ? `success-${Date.now()}` : 'success'}
+          key={state.success ? state.message : 'no-success'}
           message={state.success ? state.message : null}
           type="success"
         />
