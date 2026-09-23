@@ -31,6 +31,10 @@ export const es = {
   educationDescriptionExchange:
     'Participé en el programa de intercambio ERASMUS enfocado en tecnología de software en el departamento de informática y TI en Växjö. Colaboré con estudiantes internacionales en proyectos de seguridad informática.',
   clvTitle: 'Modelo de Predicción del Valor de Vida del Cliente',
+  craveDescription:
+    'Una plataforma de pedidos de comida basada en micro-frontends, desarrollada en un equipo de cinco personas. Frontends independientes escritos en React, Vue y Svelte se componen en tiempo de ejecución como Web Components nativos mediante un app shell sin framework, y se comunican con un backend políglota de microservicios a través de una única pasarela BFF. Yo desarrollé el app shell y su comunicación entre frontends, el frontend de catálogo en React y el servicio de restaurantes en Symfony.',
+  multicloudDescription:
+    'Infraestructura como código que despliega la misma aplicación contenerizada en dos nubes en paralelo: un clúster gestionado de AWS EKS y un clúster RKE2 autogestionado sobre OpenStack. Terraform aprovisiona ambos entornos, mientras que manifiestos de Kubernetes compartidos gestionan el enrutamiento de ingress, la base de datos y el acceso al registro privado.',
   multiModelDescription:
     'Multi-Model Chat es una aplicación moderna desarrollada con Next.js que combina la potencia de las API de Mistral, OpenAI y Anthropic. Permite a los usuarios conversar con diferentes modelos de IA, comparar sus respuestas y explorar sus puntos fuertes únicos.',
   clvDescription:

@@ -31,12 +31,16 @@ export const en = {
   educationDescriptionExchange:
     'Participated in th ERASMUS exchange program focusing on software technology at the computer science and IT department in Växjö. Collaborated with international students on computer security projects.',
   clvTitle: 'Customer Lifetime Value Prediction Model',
+  craveDescription:
+    'A micro-frontend food ordering platform built with a team of five. Independent frontends written in React, Vue and Svelte are composed at runtime as native Web Components by a framework-free app shell, and talk to a polyglot microservice backend through a single BFF gateway. I built the app shell and its cross-frontend communication, the React catalog frontend, and the Symfony restaurant service.',
+  multicloudDescription:
+    'Infrastructure as Code that deploys the same containerised application to two clouds side by side: a managed AWS EKS cluster and a self-managed RKE2 cluster on OpenStack. Terraform provisions both environments, while shared Kubernetes manifests handle ingress routing, the database and private registry access.',
   multiModelDescription:
     'Multi-Model Chat is a modern Next.js application that brings together the power of Mistral, OpenAI, and Anthropic APIs. It allows users to chat with different AI models, compare their responses, and explore their unique strengths.',
   clvDescription:
     'This project presents the development of a two-phase model for predicting Customer Lifetime Value (CLV). The model includes both a classification and a regression algorithm, which were designed and evaluated to predict the likelihood of customer retention and the monetary value a customer will generate over a specified time period.',
   movieBaseDescription:
-    'A sleek web application that lets users discover and explore movies effortlessly. It fetches real-time data from a movie database API, displaying key details like ratings, genres, release dates, and summaries',
+    'A sleek web application that lets users discover and explore movies effortlessly. It fetches real-time data from a movie database API, displaying key details like ratings, genres, release dates, and summaries.',
   groBroDescription:
     'Grocery inventory management app that tracks products and expiration dates, fetches product details via barcode scanning, and helps reduce food waste.',
   contactHeader: "Let's get in touch.",
