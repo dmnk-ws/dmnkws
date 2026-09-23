@@ -2,6 +2,7 @@ export const es = {
   home: 'inicio',
   about: 'acerca de mí',
   portfolio: 'portafolio',
+  projectNavigation: 'navegación de proyectos',
   contact: 'contacto',
   mainHeader: 'hola! yo soy un ',
   mainText:

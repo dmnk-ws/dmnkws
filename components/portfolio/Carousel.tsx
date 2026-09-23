@@ -117,6 +117,8 @@ export default function Carousel() {
       )}
       <div
         ref={sliderRef}
+        role="region"
+        aria-label={t('portfolio')}
         className="grid grid-flow-col grid-rows-[auto_auto_auto_auto] overflow-x-auto p-8 md:p-8 px-4 snap-x snap-mandatory"
         style={{
           columnGap: gap,
@@ -130,6 +132,33 @@ export default function Carousel() {
           <Card key={project.title} project={project} width={cardWidth} />
         ))}
       </div>
+      {isMobile && (
+        <div
+          role="group"
+          aria-label={t('projectNavigation')}
+          className="flex justify-center gap-1 -mt-4"
+        >
+          {projects.map((project, index) => {
+            const isCurrent = index === currentIndex;
+
+            return (
+              <button
+                key={project.title}
+                aria-label={project.title}
+                aria-current={isCurrent}
+                onClick={() => scrollToIndex(index)}
+                className="p-2 cursor-pointer"
+              >
+                <span
+                  className={`block h-2 rounded-full transition-all duration-300 ${
+                    isCurrent ? 'w-4 bg-white' : 'w-2 bg-gray-600'
+                  }`}
+                />
+              </button>
+            );
+          })}
+        </div>
+      )}
       {!isMobile && (
         <Chevron
           orientation="right"

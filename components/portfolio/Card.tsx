@@ -13,6 +13,8 @@ export interface Project {
   technologies?: string[];
 }
 
+const MOBILE_CHIP_LIMIT = 4;
+
 interface CardProps {
   project: Project;
   width: number;
@@ -40,12 +42,24 @@ function Card({ project, width }: CardProps) {
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
         </div>
         <h3 className="text-xl font-semibold px-6 pt-6 mb-2">{project.title}</h3>
-        <p className="text-gray-300 text-sm px-6 mb-4">{project.description}</p>
+        <p className="text-gray-300 text-sm px-6 mb-4 line-clamp-3 md:line-clamp-none">
+          {project.description}
+        </p>
         {project.technologies && (
           <div className="flex flex-wrap content-start gap-2 px-6 pt-4">
-            {project.technologies.map((label) => (
-              <Chip key={label} text={label} />
+            {project.technologies.map((label, index) => (
+              <Chip
+                key={label}
+                text={label}
+                className={index >= MOBILE_CHIP_LIMIT ? 'hidden md:block' : ''}
+              />
             ))}
+            {project.technologies.length > MOBILE_CHIP_LIMIT && (
+              <Chip
+                text={`+${project.technologies.length - MOBILE_CHIP_LIMIT}`}
+                className="md:hidden"
+              />
+            )}
           </div>
         )}
       </a>
