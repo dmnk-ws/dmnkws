@@ -11,7 +11,9 @@ const CARD_WIDTH_MOBILE = 300;
 const GAP_DESKTOP = 32;
 const GAP_MOBILE = 16;
 const CHEVRON_WIDTH = 48;
-const MOBILE_BREAKPOINT = 640;
+const EDGE_PADDING_DESKTOP = 32;
+const EDGE_PADDING_MOBILE = 16;
+const MOBILE_BREAKPOINT = 768;
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,15 +26,23 @@ export default function Carousel() {
   const projectsLength = projects.length;
   const cardWidth = isMobile ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP;
   const gap = isMobile ? GAP_MOBILE : GAP_DESKTOP;
+  const edgePadding = isMobile ? EDGE_PADDING_MOBILE : EDGE_PADDING_DESKTOP;
+
+  const getScrollPaddingLeft = useCallback(
+    (index: number) => (!isMobile && index > 0 ? CHEVRON_WIDTH + gap / 2 : edgePadding),
+    [isMobile, gap, edgePadding]
+  );
 
   const scrollToIndex = useCallback(
     (index: number) => {
       if (!sliderRef.current || isScrolling) return;
 
       const newIndex = Math.max(0, Math.min(index, maxIndex));
-      const chevronOffset = !isMobile && newIndex > 0 ? CHEVRON_WIDTH : 0;
-      const scrollLeft = newIndex * (cardWidth + gap) - chevronOffset;
+      const scrollPaddingLeft = getScrollPaddingLeft(newIndex);
+      const scrollLeft = newIndex * (cardWidth + gap) + edgePadding - scrollPaddingLeft;
 
+      // Applied before scrolling so snapping targets the new position
+      sliderRef.current.style.scrollPaddingLeft = `${scrollPaddingLeft}px`;
       sliderRef.current.scrollTo({
         left: scrollLeft,
         behavior: 'smooth',
@@ -42,7 +52,7 @@ export default function Carousel() {
       setCurrentIndex(newIndex);
       setTimeout(() => setIsScrolling(false), 500);
     },
-    [isScrolling, maxIndex, isMobile, cardWidth, gap]
+    [isScrolling, maxIndex, cardWidth, gap, edgePadding, getScrollPaddingLeft]
   );
 
   const handlePrevious = useCallback(() => {
@@ -85,10 +95,7 @@ export default function Carousel() {
     const handleScroll = () => {
       if (!sliderRef.current) return;
 
-      const scrollLeft = sliderRef.current.scrollLeft;
-      const chevronOffset = isMobile ? 0 : CHEVRON_WIDTH;
-      const adjustedScrollLeft = Math.max(0, scrollLeft - chevronOffset);
-      const newIndex = Math.round(adjustedScrollLeft / (cardWidth + gap));
+      const newIndex = Math.round(sliderRef.current.scrollLeft / (cardWidth + gap));
 
       setCurrentIndex(Math.min(newIndex, maxIndex));
     };
@@ -96,7 +103,7 @@ export default function Carousel() {
     slider.addEventListener('scroll', handleScroll);
 
     return () => slider.removeEventListener('scroll', handleScroll);
-  }, [isScrolling, maxIndex, isMobile, cardWidth, gap]);
+  }, [maxIndex, cardWidth, gap]);
 
   return (
     <div className="relative">
@@ -110,9 +117,11 @@ export default function Carousel() {
       )}
       <div
         ref={sliderRef}
-        className="flex overflow-x-auto p-8 sm:p-8 px-4 snap-x snap-mandatory"
+        className="grid grid-flow-col grid-rows-[auto_auto_auto_auto] overflow-x-auto p-8 md:p-8 px-4 snap-x snap-mandatory"
         style={{
-          gap,
+          columnGap: gap,
+          scrollPaddingLeft: getScrollPaddingLeft(currentIndex),
+          scrollPaddingRight: edgePadding,
           scrollbarWidth: 'none',
           WebkitOverflowScrolling: 'touch',
         }}
