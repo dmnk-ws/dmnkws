@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import Card from '../about/Card';
 import Navigator from '../about/Navigator';
 import { getExperiences } from '@/constants/about/experiences';
@@ -31,6 +31,13 @@ export default function About() {
   const { t } = useTranslation();
   const experiences = useMemo(() => getExperiences(t), [t]);
   const [activeItem, setActiveItem] = useState<Item>(experiences[0]);
+  const [prevExperiences, setPrevExperiences] = useState(experiences);
+
+  if (experiences !== prevExperiences) {
+    setPrevExperiences(experiences);
+    setActiveItem(experiences[0]);
+  }
+
   const education = useMemo(() => getEducation(t), [t]);
   const sections = useMemo(
     () => getSections(t, experiences, education),
@@ -40,10 +47,6 @@ export default function About() {
   const handleActiveItemChange = useCallback((item: Item) => {
     setActiveItem(item);
   }, []);
-
-  useEffect(() => {
-    setActiveItem(experiences[0]);
-  }, [experiences]);
 
   return (
     <Section id="about" grid>
