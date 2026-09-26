@@ -26,11 +26,8 @@ export default function Footer() {
         </div>
         <div className="flex justify-center mt-10">
           <Icon href="https://github.com/dmnk-ws" icon={faGithub} />
-          <Icon
-            href="https://www.linkedin.com/in/dominik-wies-613483204"
-            icon={faLinkedin}
-          />
-          <Icon href="https://www.instagram.com/dmnkws/" icon={faInstagram} />
+          <Icon href="https://www.linkedin.com/in/dmnkws" icon={faLinkedin} />
+          <Icon href="https://www.instagram.com/dmnkws" icon={faInstagram} />
           <Icon href="mailto:domi.wies@googlemail.com" icon={faPaperPlane} />
         </div>
         <div className="flex flex-col justify-center items-center my-10">
