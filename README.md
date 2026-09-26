@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# dmnkws.dev
+
+Personal portfolio website of [me](https://www.dmnkws.dev), built with [Next.js](https://nextjs.org) (App Router), React 19 and Tailwind CSS 4.
+
+The site is a single page with the sections **Home**, **About**, **Portfolio** and **Contact**, available in English, German and Spanish.
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org) with React 19 and TypeScript
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Resend](https://resend.com) and [React Email](https://react.email) for the contact form
+- [Font Awesome](https://fontawesome.com) icons
+- [Jest](https://jestjs.io) and [Testing Library](https://testing-library.com) for tests
+- ESLint and Prettier
 
 ## Getting Started
 
-First, run the development server:
+Requires Node.js 20 or later.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The contact form sends emails via Resend. Create a `.env.local` file in the project root:
 
-## Learn More
+```bash
+RESEND_API_KEY=your-resend-api-key
+RESEND_FROM=sender@your-verified-domain.com
+RESEND_TO=recipient@example.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+Without these, the rest of the site works, but submitting the contact form fails.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command              | Description                        |
+| -------------------- | ---------------------------------- |
+| `npm run dev`        | Start the development server       |
+| `npm run build`      | Create a production build          |
+| `npm run start`      | Serve the production build         |
+| `npm run lint`       | Run ESLint                         |
+| `npm run format`     | Format the code with Prettier      |
+| `npm test`           | Run the Jest test suite            |
+| `npm run test:watch` | Run the tests in watch mode        |
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/          Root layout, page and the contact form server action
+components/   UI components, grouped by section (navigation, about, portfolio, form, ...)
+constants/    Content such as experiences, education and portfolio projects
+context/      Translation and active-section providers
+lib/          Form validation and rate limiting
+locales/      Translations (en, de, es)
+public/       Static assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact Form
+
+Submissions are handled by a server action (`app/actions/contact.ts`) that validates the input, filters bots with a honeypot field and limits each IP to three messages per hour before sending the email through Resend.
+
+## CI
+
+GitHub Actions (`.github/workflows/main.yml`) builds, lints and tests the project on every push.
