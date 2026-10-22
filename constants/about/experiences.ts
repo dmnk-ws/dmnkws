@@ -3,7 +3,7 @@ import { TFunction } from '@/context/TranslationContext';
 
 export const getExperiences = (t: TFunction): Item[] => [
   {
-    dateRange: '2024 — ' + t('present').toUpperCase(),
+    dateRange: '2025 — ' + t('present').toUpperCase(),
     title: t('occupation'),
     company: 'EELOY AG',
     companyUrl: 'https://www.eeloy.com/',
@@ -11,6 +11,9 @@ export const getExperiences = (t: TFunction): Item[] => [
     technologies: [
       'TypeScript',
       'React',
+      'Redux Toolkit',
+      'Vite',
+      'Vitest',
       'PHP',
       'Symfony',
       'Doctrine',
@@ -37,6 +40,8 @@ export const getExperiences = (t: TFunction): Item[] => [
     companyUrl: 'https://www.eeloy.com/',
     description: t('experienceDescriptionIntern'),
     technologies: [
+      'TypeScript',
+      'React',
       'HTML5',
       'CSS3',
       'JavaScript',
