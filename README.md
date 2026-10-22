@@ -15,7 +15,7 @@ The site is a single page with the sections **Home**, **About**, **Portfolio** a
 
 ## Getting Started
 
-Requires Node.js 20 or later.
+Requires Node.js 24 or later.
 
 ```bash
 npm install
