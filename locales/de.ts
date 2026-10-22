@@ -14,7 +14,7 @@ export const de = {
   experience: 'erfahrung',
   present: 'heute',
   experienceDescriptionPresent:
-    'Treibe die Migration einer produktiven Webanwendung von ExtJS zu React und TypeScript voran; bisher wurden 30 von über 40 Listen- und CRUD-Seiten in React mit Redux Toolkit neu umgesetzt. Ersetzte Webpack durch Vite, wodurch der Start des Dev-Servers von ca. 84 s auf ca. 1 s sank und 349 Abhängigkeiten entfielen. Führte Frontend-Tests mit Vitest ein und steigerte die Testabdeckung von 0 % auf ca. 70 %. Entwerfe und optimiere Symfony-Backend-Routen für das neue Frontend, entwickle Oberflächen gemeinsam mit Produktdesignern vom Mockup bis zum Release und betreue Auszubildende und Praktikanten.',
+    'Ich treibe die Migration einer produktiven Webanwendung von ExtJS zu React und TypeScript voran und habe bisher 30 von über 40 Seiten mit React und Redux Toolkit neu umgesetzt. Dabei habe ich Webpack durch Vite ersetzt, wodurch der Dev-Server statt rund 84 Sekunden nur noch eine Sekunde zum Starten braucht, und Frontend-Tests mit Vitest eingeführt, die die Testabdeckung von null auf rund 80 % gebracht haben. Im Backend entwerfe und optimiere ich die Symfony-Routen für das neue Frontend. Mit unseren Produktdesignern arbeite ich vom ersten Mockup bis zum Release eng zusammen, außerdem betreue ich Auszubildende und Praktikanten.',
   experienceTitleResearch: 'Forschungsstudent (Bachelorarbeit)',
   experienceDescriptionThesis:
     'Untersuchte die Machbarkeit, den Customer Lifetime Value aus internen Unternehmensdaten vorherzusagen, indem ein Deep Neural Network und ein Random-Forest-Modell trainiert und verglichen wurden. Identifizierte Lücken in der Datenqualität, die die Genauigkeit begrenzten, woraufhin neue interne Prozesse zur Datenqualität eingeführt wurden.',
@@ -24,7 +24,7 @@ export const de = {
   education: 'ausbildung',
   educationTitleMaster: 'Global Software Development (M.Sc.)',
   educationDescriptionMaster:
-    'Fokus auf das Design und die Implementierung verteilter Softwaresysteme in global diversen Teams, mit Kursen zu Micro-Frontends und Microservices, Web- und Mobile-Apps, testorientierter Entwicklung und Cloud Computing. Aktuelle Note: 1,0.',
+    'Fokus auf das Design und die Implementierung verteilter Softwaresysteme in global diversen Teams, mit Kursen zu Micro-Frontends und Microservices, Web- und Mobile-Apps, testorientierter Entwicklung und Cloud Computing.',
   educationTitleBachelor: 'Digitale Medien (B.Sc.)',
   educationDescriptionBachelor:
     'Studierte Grundlagen der Informatik, einschließlich Algorithmen, Datenstrukturen, Software Engineering, Webanwendungen und Datenbanksysteme, sowie Kurse zu Benutzeroberflächen, Usability und Mensch-Computer-Interaktion. Abschluss mit der Note 1,1 und Auszeichnung mit dem Ewald-Vollmer-Preis als einer der besten Absolventen des Fachbereichs.',

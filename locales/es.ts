@@ -14,7 +14,7 @@ export const es = {
   experience: 'experiencia',
   present: 'ahora',
   experienceDescriptionPresent:
-    'Lidero la migración de una aplicación web en producción de ExtJS a React y TypeScript; hasta ahora he reconstruido 30 de más de 40 páginas de listas y CRUD en React con Redux Toolkit. Sustituí Webpack por Vite, reduciendo el arranque del servidor de desarrollo de ~84 s a ~1 s y eliminando 349 dependencias. Introduje pruebas de frontend con Vitest, aumentando la cobertura de código del 0 % a ~70 %. Diseño y optimizo rutas de backend en Symfony para el nuevo frontend, desarrollo interfaces junto a diseñadores de producto desde el mockup hasta el lanzamiento y oriento a aprendices y becarios.',
+    'Impulso la migración de una aplicación web en producción de ExtJS a React y TypeScript, y hasta ahora he reconstruido 30 de más de 40 páginas con React y Redux Toolkit. Por el camino sustituí Webpack por Vite, lo que redujo el arranque del servidor de desarrollo de unos 84 segundos a uno, e introduje pruebas de frontend con Vitest, que llevaron la cobertura de código de cero a alrededor del 80 %. En el backend, diseño y optimizo las rutas de Symfony que utiliza el nuevo frontend. Trabajo estrechamente con nuestros diseñadores de producto desde el primer mockup hasta el lanzamiento y oriento a aprendices y becarios.',
   experienceTitleResearch: 'Estudiante de Investigación (Tesis de Grado)',
   experienceDescriptionThesis:
     'Evalué la viabilidad de predecir el Valor de Vida del Cliente (Customer Lifetime Value) a partir de datos internos de la empresa, entrenando y comparando una Red Neuronal Profunda y un modelo Random Forest. Identifiqué carencias en la calidad de los datos que limitaban la precisión, lo que dio lugar a nuevos procesos internos de calidad de datos.',
@@ -24,7 +24,7 @@ export const es = {
   education: 'educación',
   educationTitleMaster: 'Global Software Development (M.Sc.)',
   educationDescriptionMaster:
-    'Enfocado en el diseño e implementación de sistemas de software distribuidos en equipos globalmente diversos, con cursos sobre micro-frontends y microservicios, aplicaciones web y móviles, desarrollo orientado a pruebas y computación en la nube. Nota actual: 1,0.',
+    'Enfocado en el diseño e implementación de sistemas de software distribuidos en equipos globalmente diversos, con cursos sobre micro-frontends y microservicios, aplicaciones web y móviles, desarrollo orientado a pruebas y computación en la nube.',
   educationTitleBachelor: 'Medios Digitales (B.Sc.)',
   educationDescriptionBachelor:
     'Estudié fundamentos de la informática, incluyendo algoritmos, estructuras de datos, ingeniería de software, aplicaciones web y sistemas de bases de datos, además de cursos sobre interfaces de usuario, usabilidad e interacción humano-computadora. Me gradué con una nota de 1,1 y recibí el Premio Ewald Vollmer como uno de los mejores graduados del departamento.',

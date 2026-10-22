@@ -14,7 +14,7 @@ export const en = {
   experience: 'experience',
   present: 'present',
   experienceDescriptionPresent:
-    'Driving the migration of a production web application from ExtJS to React and TypeScript, with 30 of 40+ list and CRUD pages rebuilt in React with Redux Toolkit so far. Replaced Webpack with Vite, cutting dev server startup from ~84 s to ~1 s and removing 349 dependencies. Introduced frontend testing with Vitest, raising code coverage from 0% to ~70%. Designing and optimising Symfony backend routes for the new frontend, building interfaces with product designers from mockup to release, and mentoring apprentices and interns.',
+    "I'm driving the migration of a production web application from ExtJS to React and TypeScript, and so far I've rebuilt 30 of more than 40 pages with React and Redux Toolkit. Along the way, I replaced Webpack with Vite, which cut the dev server startup from about 84 seconds to one, and introduced frontend testing with Vitest, bringing code coverage from zero to around 80%. On the backend, I design and optimise the Symfony routes behind the new frontend. I work closely with our product designers from the first mockup to the release, and I mentor apprentices and interns.",
   experienceTitleResearch: 'Research Student (Bachelor thesis)',
   experienceDescriptionThesis:
     'Assessed the feasibility of predicting Customer Lifetime Value from internal company data by training and comparing a Deep Neural Network and a Random Forest model. Identified data quality gaps that limited accuracy, which led to new internal data quality processes.',
@@ -24,7 +24,7 @@ export const en = {
   education: 'education',
   educationTitleMaster: 'Global Software Development (M.Sc.)',
   educationDescriptionMaster:
-    'Focusing on designing and implementing distributed software systems within globally diverse teams, with coursework in micro-frontends and microservices, web and mobile apps, test-oriented development and cloud computing. Current grade: 1.0.',
+    'Focusing on designing and implementing distributed software systems within globally diverse teams, with coursework in micro-frontends and microservices, web and mobile apps, test-oriented development and cloud computing.',
   educationTitleBachelor: 'Digital Media (B.Sc.)',
   educationDescriptionBachelor:
     "Studied computer science fundamentals including algorithms, data structures, software engineering, web applications and database systems, plus courses on user interfaces, usability and human-computer interaction. Graduated with a grade of 1.1 and received the Ewald Vollmer Prize as one of the department's top graduates.",
